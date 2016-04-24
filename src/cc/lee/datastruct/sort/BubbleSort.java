@@ -30,7 +30,7 @@ public class BubbleSort {
 			}
 		}*/
 		
-		for (int i = 0; i < a.length; i++) {
+		/*for (int i = 0; i < a.length; i++) {
 			for (int j = i + 1; j < a.length; j++) {
 				if (a[i] > a[j]) {
 					int temp = a[i];
@@ -38,7 +38,22 @@ public class BubbleSort {
 					a[j] = temp;
 				}
 			}
-		}
+		}*/
+		
+		int temp;  
+        // 第一层循环： 表明要比较的次数，比如list.count个数，肯定要比较count-1次  
+        for (int i = 0; i < a.length - 1; i++) {  
+            // list.count-1：取数据最后一个数下标，  
+            // j>i: 从后往前的的下标一定大于从前往后的下标，否则就超越了。  
+            for (int j = a.length - 1; j > i; j--) {  
+                // 如果前面一个数大于后面一个数则交换  
+                if (a[j - 1] > a[j]) {  
+                    temp = a[j - 1];  
+                    a[j - 1] = a[j];  
+                    a[j] = temp;  
+                }  
+            }  
+        }  
 	}
 
 	public static void main(String[] args) {
